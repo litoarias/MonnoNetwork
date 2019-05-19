@@ -69,11 +69,14 @@ public extension Networking {
                         #endif
                         
                         if let user = try? JSONDecoder().decode(T.self, from: unwrappedData) {
-                            completion(.success(user))
                             
+                            completion(.success(user))
+                        
                         } else {
+                        
                             let errorResponse = try JSONDecoder().decode(ErrorResponse.self, from: unwrappedData)
                             completion(.failure(errorResponse))
+                        
                         }
                         
                     } catch {
