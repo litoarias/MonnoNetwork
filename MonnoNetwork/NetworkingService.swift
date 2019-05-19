@@ -44,7 +44,7 @@ public extension Networking {
                     completion(.failure(NetworkingError.badResponse))
                     return
                 }
-                
+                #if DEBUG
                 print(unwrappedResponse.statusCode)
                 
                 switch unwrappedResponse.statusCode {
@@ -53,6 +53,7 @@ public extension Networking {
                 default:
                     print("failure")
                 }
+                #endif
                 
                 if let unwrappedError = error {
                     completion(.failure(unwrappedError))
@@ -63,7 +64,9 @@ public extension Networking {
                     
                     do {
                         let json = try JSONSerialization.jsonObject(with: unwrappedData, options: [])
+                        #if DEBUG
                         print(json)
+                        #endif
                         
                         if let user = try? JSONDecoder().decode(T.self, from: unwrappedData) {
                             completion(.success(user))
