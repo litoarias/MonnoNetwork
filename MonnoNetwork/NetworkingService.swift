@@ -1,9 +1,9 @@
 //
-//  NetworkingService.swift
-//  Database Login
+//  Networking.swift
+//  MonnoNetwork
 //
-//  Created by Kyle Lee on 2/17/19.
-//  Copyright © 2019 Kilo Loco. All rights reserved.
+//  Created by Lito Arias on 19/05/2019.
+//  Copyright © 2019 MonnoApps. All rights reserved.
 //
 
 import Foundation
