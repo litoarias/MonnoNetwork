@@ -8,20 +8,33 @@
 
 import Foundation
 
+/// <#Description#>
+///
+/// - badUrl: <#badUrl description#>
+/// - badResponse: <#badResponse description#>
+/// - badEncoding: <#badEncoding description#>
 public enum NetworkingError: Error {
     case badUrl
     case badResponse
     case badEncoding
 }
 
+/// <#Description#>
+///
+/// - get: <#get description#>
+/// - post: <#post description#>
 public enum HTTPMethod {
     case get
     case post
 }
 
+
+/// <#Description#>
 public typealias Headers = [String : String]
 public typealias Parameters = [String : Any]
 
+
+/// <#Description#>
 public protocol Networking {
     var baseUrl: String { get set }
     func handleResponse<T: Decodable>(for request: URLRequest, completion: @escaping (Result<T, Error>) -> Void)
@@ -32,6 +45,11 @@ public protocol Networking {
 
 public extension Networking {
     
+    /// <#Description#>
+    ///
+    /// - Parameters:
+    ///   - request: <#request description#>
+    ///   - completion: <#completion description#>
     func handleResponse<T: Decodable>(for request: URLRequest, completion: @escaping (Result<T, Error>) -> Void) {
         let session = URLSession.shared
         let task = session.dataTask(with: request) { (data, response, error) in
@@ -74,6 +92,15 @@ public extension Networking {
         task.resume()
     }
     
+    
+    /// <#Description#>
+    ///
+    /// - Parameters:
+    ///   - method: <#method description#>
+    ///   - endpoint: <#endpoint description#>
+    ///   - headers: <#headers description#>
+    ///   - urlParams: <#urlParams description#>
+    ///   - completion: <#completion description#>
     func request<T: Decodable>(method: String, endpoint: String, headers: Headers?, urlParams: [String: Any]?, completion: @escaping (Result<T, Error>) -> Void) {
         guard let url = URL(string: baseUrl + endpoint) else {
             completion(.failure(NetworkingError.badUrl))
@@ -100,6 +127,15 @@ public extension Networking {
         handleResponse(for: request, completion: completion)
     }
     
+    
+    /// <#Description#>
+    ///
+    /// - Parameters:
+    ///   - method: <#method description#>
+    ///   - endpoint: <#endpoint description#>
+    ///   - headers: <#headers description#>
+    ///   - bodyParams: <#bodyParams description#>
+    ///   - completion: <#completion description#>
     func request<T: Decodable>(method: String, endpoint: String, headers: Headers?, bodyParams: [String: Any]?, completion: @escaping (Result<T, Error>) -> Void) {
         guard let url = URL(string: baseUrl + endpoint) else {
             completion(.failure(NetworkingError.badUrl))
@@ -123,6 +159,15 @@ public extension Networking {
         handleResponse(for: request, completion: completion)
     }
     
+    
+    /// <#Description#>
+    ///
+    /// - Parameters:
+    ///   - path: <#path description#>
+    ///   - headers: <#headers description#>
+    ///   - params: <#params description#>
+    ///   - httpMethod: <#httpMethod description#>
+    ///   - completion: <#completion description#>
     func call<T: Decodable>(path: String, headers: Headers?, params: Parameters?, httpMethod: HTTPMethod, completion: @escaping (Result<T, Error>) -> Void) {
         switch httpMethod {
         case .post:

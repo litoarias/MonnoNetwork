@@ -9,6 +9,12 @@
 import Foundation
 
 extension Bundle {
+    
+    /// <#Description#>
+    ///
+    /// - Parameter fileName: <#fileName description#>
+    /// - Returns: <#return value description#>
+    /// - Throws: <#throws value description#>
     public func readJSON(fileName: String) throws -> Any? {
         var json: Any?
         if let path = self.path(forResource: fileName, ofType: "json") {
