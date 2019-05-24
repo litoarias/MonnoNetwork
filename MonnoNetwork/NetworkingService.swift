@@ -77,12 +77,8 @@ public extension Networking {
                         #if DEBUG
                         print(json)
                         #endif
-                        if let user = try? JSONDecoder().decode(T.self, from: unwrappedData) {
-                            completion(.success(user))
-                        } else {
-//                            let errorResponse = try JSONDecoder().decode(ErrorResponse.self, from: unwrappedData)
-                            completion(.failure(NSError(domain: "com.monno.network", code: 9999, userInfo: ["error" : unwrappedData])))
-                        }
+                        let object = try JSONDecoder().decode(T.self, from: unwrappedData)
+                        completion(.success(object))
                     } catch {
                         completion(.failure(error))
                     }
