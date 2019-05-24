@@ -107,7 +107,7 @@ public extension Networking {
         var queryItems = [URLQueryItem]()
         if let params = urlParams {
             for (key, value) in params {
-                let queryItem = URLQueryItem(name: key, value: String(describing: value))
+                let queryItem = URLQueryItem(name: key, value: value as? String)
                 queryItems.append(queryItem)
             }
         }
