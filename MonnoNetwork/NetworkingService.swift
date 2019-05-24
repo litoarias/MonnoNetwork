@@ -31,15 +31,15 @@ public enum HTTPMethod {
 
 /// <#Description#>
 public typealias Headers = [String : String]
-public typealias Parameters = [String : Any]
+public typealias Parameters = [String: String]
 
 
 /// <#Description#>
 public protocol Networking {
     var baseUrl: String { get set }
     func handleResponse<T: Decodable>(for request: URLRequest, completion: @escaping (Result<T, Error>) -> Void)
-    func request<T: Decodable>(method: String, endpoint: String, headers: Headers?, urlParams: [String: Any]?, completion: @escaping (Result<T, Error>) -> Void)
-    func request<T: Decodable>(method: String, endpoint: String, headers: Headers?, bodyParams: [String: Any]?, completion: @escaping (Result<T, Error>) -> Void)
+    func request<T: Decodable>(method: String, endpoint: String, headers: Headers?, urlParams: Parameters?, completion: @escaping (Result<T, Error>) -> Void)
+    func request<T: Decodable>(method: String, endpoint: String, headers: Headers?, bodyParams: Parameters?, completion: @escaping (Result<T, Error>) -> Void)
     func call<T: Decodable>(path: String, headers: Headers?, params: Parameters?, httpMethod: HTTPMethod, completion: @escaping (Result<T, Error>) -> Void)
 }
 
@@ -97,7 +97,7 @@ public extension Networking {
     ///   - headers: <#headers description#>
     ///   - urlParams: <#urlParams description#>
     ///   - completion: <#completion description#>
-    func request<T: Decodable>(method: String, endpoint: String, headers: Headers?, urlParams: [String: Any]?, completion: @escaping (Result<T, Error>) -> Void) {
+    func request<T: Decodable>(method: String, endpoint: String, headers: Headers?, urlParams: Parameters?, completion: @escaping (Result<T, Error>) -> Void) {
         guard let url = URL(string: baseUrl + endpoint) else {
             completion(.failure(NetworkingError.badUrl))
             return
@@ -107,7 +107,7 @@ public extension Networking {
         var queryItems = [URLQueryItem]()
         if let params = urlParams {
             for (key, value) in params {
-                let queryItem = URLQueryItem(name: key, value: value as? String)
+                let queryItem = URLQueryItem(name: key, value: value)
                 queryItems.append(queryItem)
             }
         }
@@ -132,7 +132,7 @@ public extension Networking {
     ///   - headers: <#headers description#>
     ///   - bodyParams: <#bodyParams description#>
     ///   - completion: <#completion description#>
-    func request<T: Decodable>(method: String, endpoint: String, headers: Headers?, bodyParams: [String: Any]?, completion: @escaping (Result<T, Error>) -> Void) {
+    func request<T: Decodable>(method: String, endpoint: String, headers: Headers?, bodyParams: Parameters?, completion: @escaping (Result<T, Error>) -> Void) {
         guard let url = URL(string: baseUrl + endpoint) else {
             completion(.failure(NetworkingError.badUrl))
             return

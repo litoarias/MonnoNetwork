@@ -22,7 +22,10 @@ class ViewController: UIViewController {
     }
 
     func dataRequest() {
-        networkingService.call(path: "/get/wallpapers_categories", headers: nil, params: ["lang":"es"], httpMethod: .get) { (result: Result<[Tag], Error>) in
+
+        let preferredLanguage = NSLocale.preferredLanguages[0]
+        
+        networkingService.call(path: "/get/wallpapers_categories", headers: nil, params: ["lang":preferredLanguage], httpMethod: .get) { (result: Result<[Tag], Error>) in
             switch result {
             case .success(let post):
                 print(post)
