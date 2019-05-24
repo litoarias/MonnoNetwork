@@ -13,7 +13,7 @@ class ViewController: UIViewController {
    
     let mocks: Bool = false
     var networkingService: Networking {
-        return self.mocks ? NetworkingMockService() : NetworkingService(baseUrl: "http://argo.cdragota.lab.cloudioo.net/api_contents")
+        return self.mocks ? NetworkingMockService() : NetworkingService(baseUrl: "http://argo.cdragota.lab.cloudioo.net")
     }
     
     override func viewDidLoad() {
@@ -25,7 +25,7 @@ class ViewController: UIViewController {
 
         let preferredLanguage = NSLocale.preferredLanguages[0]
         
-        networkingService.call(path: "/get/wallpapers_categories", headers: nil, params: ["lang":preferredLanguage], httpMethod: .get) { (result: Result<[Tag], Error>) in
+        networkingService.call(path: "/api_contents/get/wallpapers_categories", headers: nil, params: ["lang":preferredLanguage], httpMethod: .get) { (result: Result<[Tag], Error>) in
             switch result {
             case .success(let post):
                 print(post)

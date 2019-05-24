@@ -31,15 +31,15 @@ public enum HTTPMethod {
 
 /// <#Description#>
 public typealias Headers = [String : String]
-public typealias Parameters = [String: String]
+public typealias Parameters = [String: Any]
 
 
 /// <#Description#>
 public protocol Networking {
     var baseUrl: String { get set }
     func handleResponse<T: Decodable>(for request: URLRequest, completion: @escaping (Result<T, Error>) -> Void)
-    func request<T: Decodable>(method: String, endpoint: String, headers: Headers?, urlParams: Parameters?, completion: @escaping (Result<T, Error>) -> Void)
-    func request<T: Decodable>(method: String, endpoint: String, headers: Headers?, bodyParams: Parameters?, completion: @escaping (Result<T, Error>) -> Void)
+    func request<T: Decodable>(method: String, path: String, headers: Headers?, urlParams: Parameters?, completion: @escaping (Result<T, Error>) -> Void)
+    func request<T: Decodable>(method: String, path: String, headers: Headers?, bodyParams: Parameters?, completion: @escaping (Result<T, Error>) -> Void)
     func call<T: Decodable>(path: String, headers: Headers?, params: Parameters?, httpMethod: HTTPMethod, completion: @escaping (Result<T, Error>) -> Void)
 }
 
@@ -93,27 +93,36 @@ public extension Networking {
     ///
     /// - Parameters:
     ///   - method: <#method description#>
-    ///   - endpoint: <#endpoint description#>
+    ///   - path: <#endpoint description#>
     ///   - headers: <#headers description#>
     ///   - urlParams: <#urlParams description#>
     ///   - completion: <#completion description#>
-    func request<T: Decodable>(method: String, endpoint: String, headers: Headers?, urlParams: Parameters?, completion: @escaping (Result<T, Error>) -> Void) {
-        guard let url = URL(string: baseUrl + endpoint) else {
+    func request<T: Decodable>(method: String, path: String, headers: Headers?, urlParams: Parameters?, completion: @escaping (Result<T, Error>) -> Void) {
+        guard let url = URL(string: baseUrl) else {
             completion(.failure(NetworkingError.badUrl))
             return
         }
-        var request = URLRequest(url: url)
         var components = URLComponents()
+        components.scheme = url.scheme
+        components.host = url.host
+        components.path = path
+       
         var queryItems = [URLQueryItem]()
+        
         if let params = urlParams {
             for (key, value) in params {
-                let queryItem = URLQueryItem(name: key, value: value)
+                let queryItem = URLQueryItem(name: key, value: value as? String)
                 queryItems.append(queryItem)
             }
         }
+        
         components.queryItems = queryItems
-        let queryItemData = components.query?.data(using: .utf8)
-        request.httpBody = queryItemData
+        
+        guard let urlQuery = components.url else {
+            completion(.failure(NetworkingError.badUrl))
+            return
+        }
+        var request = URLRequest(url: urlQuery)
         request.httpMethod = method
         if let head = headers {
             for (key, value) in head {
@@ -132,8 +141,8 @@ public extension Networking {
     ///   - headers: <#headers description#>
     ///   - bodyParams: <#bodyParams description#>
     ///   - completion: <#completion description#>
-    func request<T: Decodable>(method: String, endpoint: String, headers: Headers?, bodyParams: Parameters?, completion: @escaping (Result<T, Error>) -> Void) {
-        guard let url = URL(string: baseUrl + endpoint) else {
+    func request<T: Decodable>(method: String, path: String, headers: Headers?, bodyParams: Parameters?, completion: @escaping (Result<T, Error>) -> Void) {
+        guard let url = URL(string: baseUrl + path) else {
             completion(.failure(NetworkingError.badUrl))
             return
         }
@@ -167,9 +176,9 @@ public extension Networking {
     func call<T: Decodable>(path: String, headers: Headers?, params: Parameters?, httpMethod: HTTPMethod, completion: @escaping (Result<T, Error>) -> Void) {
         switch httpMethod {
         case .post:
-            request(method: "POST", endpoint: path, headers: headers, bodyParams: params, completion: completion)
+            request(method: "POST", path: path, headers: headers, bodyParams: params, completion: completion)
         case .get:
-            request(method: "GET", endpoint: path, headers: headers, urlParams: params, completion: completion)
+            request(method: "GET", path: path, headers: headers, urlParams: params, completion: completion)
         }
     }
 }
