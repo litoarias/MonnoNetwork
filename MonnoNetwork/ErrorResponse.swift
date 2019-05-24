@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct ErrorResponse: Decodable, LocalizedError {
-    let reason: String
-    var errorDescription: String? { return reason }
+public struct ErrorResponse: Decodable, LocalizedError {
+    public let reason: String
+    public var errorDescription: String? { return reason }
 }

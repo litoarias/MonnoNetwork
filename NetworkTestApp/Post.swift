@@ -15,6 +15,7 @@ struct Post: Decodable {
     var body: String
 }
 
+
 struct Tag: Codable {
     
     var id: String?
@@ -29,5 +30,16 @@ struct Tag: Codable {
             let defaults = UserDefaults.standard
             defaults.set(encoded, forKey: "savedTags")
         }
+    }
+    
+    static func retreive() -> [Tag]? {
+        if let savedTagsData = UserDefaults.standard.object(forKey: "savedTags") as? Data {
+            let decoder = JSONDecoder()
+            if let savedTags = try? decoder.decode([Tag].self, from: savedTagsData) {
+                print(savedTags)
+                return savedTags
+            }
+        }
+        return nil
     }
 }
