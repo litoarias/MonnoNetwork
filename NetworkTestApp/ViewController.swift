@@ -11,9 +11,9 @@ import MonnoNetwork
 
 class ViewController: UIViewController {
    
-    let mocks: Bool = true
+    let mocks: Bool = false
     var networkingService: Networking {
-        return self.mocks ? NetworkingMockService() : NetworkingService(baseUrl: "https://jsonplaceholder.typicode.com")
+        return self.mocks ? NetworkingMockService() : NetworkingService(baseUrl: "http://argo.cdragota.lab.cloudioo.net/api_contents")
     }
     
     override func viewDidLoad() {
@@ -22,7 +22,7 @@ class ViewController: UIViewController {
     }
 
     func dataRequest() {
-        networkingService.call(path: "/posts", headers: nil, params: nil, httpMethod: .get) { (result: Result<[Post], Error>) in
+        networkingService.call(path: "/get/wallpapers_categories", headers: nil, params: ["lang":"es"], httpMethod: .get) { (result: Result<[Tag], Error>) in
             switch result {
             case .success(let post):
                 print(post)
