@@ -11,7 +11,8 @@ import MonnoNetwork
 public class NetworkingService: Networking {
     
     public var baseUrl = ""
-    
+    public var verbose: Bool = true
+
     public init(baseUrl: String) {
         self.baseUrl = baseUrl
     }

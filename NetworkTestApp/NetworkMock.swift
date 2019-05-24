@@ -11,6 +11,7 @@ import MonnoNetwork
 class NetworkingMockService: Networking {
     
     var baseUrl = ""
+    var verbose: Bool = true
     
     func handleResponse<T: Decodable>(for request: URLRequest, completion: @escaping (Result<T, Error>) -> Void) {
         
