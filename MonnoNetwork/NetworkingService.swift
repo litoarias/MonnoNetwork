@@ -74,18 +74,12 @@ public extension Networking {
                 dump(error)
                 print("-----------------")
                 #endif
-
-//                guard let unwrappedResponse = response as? HTTPURLResponse else {
-//                    completion(.failure(NetworkingError.badResponse))
-//                    return
-//                }
                 if let unwrappedError = error {
                     completion(.failure(unwrappedError))
                     return
                 }
                 if let unwrappedData = data {
                     do {
-                        let json = try JSONSerialization.jsonObject(with: unwrappedData, options: [])
                         let object = try JSONDecoder().decode(T.self, from: unwrappedData)
                         completion(.success(object))
                     } catch {
