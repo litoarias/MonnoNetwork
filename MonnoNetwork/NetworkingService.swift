@@ -17,6 +17,7 @@ public enum NetworkingError: Error {
     case badUrl
     case badResponse
     case badEncoding
+    case unknown(Data)
 }
 
 /// <#Description#>
@@ -33,16 +34,15 @@ public enum HTTPMethod {
 public typealias Headers = [String : String]
 public typealias Parameters = [String: Any]
 
-
 /// <#Description#>
 public protocol Networking {
     
     var verbose: Bool { get set }
     var baseUrl: String { get set }
-    func handleResponse<T: Decodable>(for request: URLRequest, completion: @escaping (Result<T, Error>) -> Void)
-    func request<T: Decodable>(method: String, path: String, headers: Headers?, urlParams: Parameters?, completion: @escaping (Result<T, Error>) -> Void)
-    func request<T: Decodable>(method: String, path: String, headers: Headers?, bodyParams: Parameters?, completion: @escaping (Result<T, Error>) -> Void)
-    func call<T: Decodable>(path: String, headers: Headers?, params: Parameters?, httpMethod: HTTPMethod, completion: @escaping (Result<T, Error>) -> Void)
+    func handleResponse<T: Decodable>(for request: URLRequest, completion: @escaping (Result<(object: T, unwrapped: Data), Error>) -> Void)
+    func request<T: Decodable>(method: String, path: String, headers: Headers?, urlParams: Parameters?, completion: @escaping (Result<(object: T, unwrapped: Data), Error>) -> Void)
+    func request<T: Decodable>(method: String, path: String, headers: Headers?, bodyParams: Parameters?, completion: @escaping (Result<(object: T, unwrapped: Data), Error>) -> Void)
+    func call<T: Decodable>(path: String, headers: Headers?, params: Parameters?, httpMethod: HTTPMethod, completion: @escaping (Result<(object: T, unwrapped: Data), Error>) -> Void)
 }
 
 public extension Networking {
@@ -52,7 +52,7 @@ public extension Networking {
     /// - Parameters:
     ///   - request: <#request description#>
     ///   - completion: <#completion description#>
-    func handleResponse<T: Decodable>(for request: URLRequest, completion: @escaping (Result<T, Error>) -> Void) {
+    func handleResponse<T: Decodable>(for request: URLRequest, completion: @escaping (Result<(object: T, unwrapped: Data), Error>) -> Void) {
         let session = URLSession.shared
         
         #if DEBUG
@@ -74,6 +74,11 @@ public extension Networking {
                 dump(error)
                 print("-----------------")
                 #endif
+
+//                guard let unwrappedResponse = response as? HTTPURLResponse else {
+//                    completion(.failure(NetworkingError.badResponse))
+//                    return
+//                }
                 if let unwrappedError = error {
                     completion(.failure(unwrappedError))
                     return
@@ -81,9 +86,9 @@ public extension Networking {
                 if let unwrappedData = data {
                     do {
                         let object = try JSONDecoder().decode(T.self, from: unwrappedData)
-                        completion(.success(object))
+                        completion(.success((object, unwrappedData)))
                     } catch {
-                        completion(.failure(error))
+                        completion(.failure(NetworkingError.unknown(unwrappedData)))
                     }
                 }
             }
@@ -100,7 +105,7 @@ public extension Networking {
     ///   - headers: <#headers description#>
     ///   - urlParams: <#urlParams description#>
     ///   - completion: <#completion description#>
-    func request<T: Decodable>(method: String, path: String, headers: Headers?, urlParams: Parameters?, completion: @escaping (Result<T, Error>) -> Void) {
+    func request<T: Decodable>(method: String, path: String, headers: Headers?, urlParams: Parameters?, completion: @escaping (Result<(object: T, unwrapped: Data), Error>) -> Void) {
         guard let url = URL(string: baseUrl) else {
             completion(.failure(NetworkingError.badUrl))
             return
@@ -144,7 +149,7 @@ public extension Networking {
     ///   - headers: <#headers description#>
     ///   - bodyParams: <#bodyParams description#>
     ///   - completion: <#completion description#>
-    func request<T: Decodable>(method: String, path: String, headers: Headers?, bodyParams: Parameters?, completion: @escaping (Result<T, Error>) -> Void) {
+    func request<T: Decodable>(method: String, path: String, headers: Headers?, bodyParams: Parameters?, completion: @escaping (Result<(object: T, unwrapped: Data), Error>) -> Void) {
         guard let url = URL(string: baseUrl + path) else {
             completion(.failure(NetworkingError.badUrl))
             return
@@ -176,7 +181,7 @@ public extension Networking {
     ///   - params: <#params description#>
     ///   - httpMethod: <#httpMethod description#>
     ///   - completion: <#completion description#>
-    func call<T: Decodable>(path: String, headers: Headers?, params: Parameters?, httpMethod: HTTPMethod, completion: @escaping (Result<T, Error>) -> Void) {
+    func call<T: Decodable>(path: String, headers: Headers?, params: Parameters?, httpMethod: HTTPMethod, completion: @escaping (Result<(object: T, unwrapped: Data), Error>) -> Void) {
         switch httpMethod {
         case .post:
             request(method: "POST", path: path, headers: headers, bodyParams: params, completion: completion)

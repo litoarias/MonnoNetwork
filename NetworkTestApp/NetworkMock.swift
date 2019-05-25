@@ -13,7 +13,7 @@ class NetworkingMockService: Networking {
     var baseUrl = ""
     var verbose: Bool = true
     
-    func handleResponse<T: Decodable>(for request: URLRequest, completion: @escaping (Result<T, Error>) -> Void) {
+    func handleResponse<T: Decodable>(for request: URLRequest, completion: @escaping (Result<(T, Data), Error>) -> Void) {
         
         DispatchQueue.main.async {
             
@@ -27,7 +27,7 @@ class NetworkingMockService: Networking {
                 print(json)
                 let jsonData = try JSONSerialization.data(withJSONObject:json)
                 let items = try JSONDecoder().decode(T.self, from: jsonData)
-                completion(.success(items))
+                completion(.success((items, jsonData)))
             } catch {
                 completion(.failure(error))
             }
