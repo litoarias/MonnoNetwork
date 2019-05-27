@@ -85,7 +85,9 @@ public extension Networking {
                 }
                 if let unwrappedData = data {
                     do {
-                        let object = try JSONDecoder().decode(T.self, from: unwrappedData)
+                        let decoder = JSONDecoder()
+                        decoder.keyDecodingStrategy = .convertFromSnakeCase
+                        let object = try decoder.decode(T.self, from: unwrappedData)
                         completion(.success((object, unwrappedData)))
                     } catch {
                         completion(.failure(NetworkingError.unknown(unwrappedData)))
