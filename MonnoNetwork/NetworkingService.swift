@@ -36,8 +36,7 @@ public typealias Parameters = [String: Any]
 
 /// <#Description#>
 public protocol Networking {
-    
-    var verbose: Bool { get set }
+    var session: URLSession? { get set }
     var baseUrl: String { get set }
     func handleResponse<T: Decodable>(for request: URLRequest, completion: @escaping (Result<(object: T, unwrapped: Data), Error>) -> Void)
     func request<T: Decodable>(method: String, path: String, headers: Headers?, urlParams: Parameters?, completion: @escaping (Result<(object: T, unwrapped: Data), Error>) -> Void)
@@ -47,21 +46,21 @@ public protocol Networking {
 
 public extension Networking {
     
+    
     /// <#Description#>
     ///
     /// - Parameters:
     ///   - request: <#request description#>
     ///   - completion: <#completion description#>
     func handleResponse<T: Decodable>(for request: URLRequest, completion: @escaping (Result<(object: T, unwrapped: Data), Error>) -> Void) {
-        let session = URLSession.shared
         
         #if DEBUG
         print("REQUEST:\n")
         dump(request)
         print("-----------------")
         #endif
-
-        let task = session.dataTask(with: request) { (data, response, error) in
+        
+        let task = session?.dataTask(with: request) { (data, response, error) in
             DispatchQueue.main.async {
                 #if DEBUG
                 print("DATA:\n")
@@ -74,20 +73,18 @@ public extension Networking {
                 dump(error)
                 print("-----------------")
                 #endif
-
-//                guard let unwrappedResponse = response as? HTTPURLResponse else {
-//                    completion(.failure(NetworkingError.badResponse))
-//                    return
-//                }
+                
+                //                guard let unwrappedResponse = response as? HTTPURLResponse else {
+                //                    completion(.failure(NetworkingError.badResponse))
+                //                    return
+                //                }
                 if let unwrappedError = error {
                     completion(.failure(unwrappedError))
                     return
                 }
                 if let unwrappedData = data {
                     do {
-                        let decoder = JSONDecoder()
-                        decoder.keyDecodingStrategy = .convertFromSnakeCase
-                        let object = try decoder.decode(T.self, from: unwrappedData)
+                        let object = try JSONDecoder().decode(T.self, from: unwrappedData)
                         completion(.success((object, unwrappedData)))
                     } catch {
                         completion(.failure(NetworkingError.unknown(unwrappedData)))
@@ -95,7 +92,7 @@ public extension Networking {
                 }
             }
         }
-        task.resume()
+        task?.resume()
     }
     
     
@@ -116,7 +113,7 @@ public extension Networking {
         components.scheme = url.scheme
         components.host = url.host
         components.path = path
-       
+        
         var queryItems = [URLQueryItem]()
         
         if let params = urlParams {
@@ -192,5 +189,3 @@ public extension Networking {
         }
     }
 }
-
-

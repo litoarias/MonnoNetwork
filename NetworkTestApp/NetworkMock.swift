@@ -9,7 +9,7 @@
 import MonnoNetwork
 
 class NetworkingMockService: Networking {
-    
+    var session: URLSession? = URLSession.shared
     var baseUrl = ""
     var verbose: Bool = true
     
