@@ -28,6 +28,8 @@
 		735694312291A79A003131B4 /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 735694302291A79A003131B4 /* Comment.swift */; };
 		735694332291A877003131B4 /* Bundle+JSONFileReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 735694322291A877003131B4 /* Bundle+JSONFileReader.swift */; };
 		735694352291AB94003131B4 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 735694342291AB94003131B4 /* Network.swift */; };
+		D73BD14C22D5C94E00F9D054 /* URLRequest+Description.swift in Sources */ = {isa = PBXBuildFile; fileRef = D73BD14B22D5C94E00F9D054 /* URLRequest+Description.swift */; };
+		D73BD14E22D5C96200F9D054 /* HTTPURLResponse+Description.swift in Sources */ = {isa = PBXBuildFile; fileRef = D73BD14D22D5C96200F9D054 /* HTTPURLResponse+Description.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -111,6 +113,8 @@
 		735694302291A79A003131B4 /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
 		735694322291A877003131B4 /* Bundle+JSONFileReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+JSONFileReader.swift"; sourceTree = "<group>"; };
 		735694342291AB94003131B4 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
+		D73BD14B22D5C94E00F9D054 /* URLRequest+Description.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLRequest+Description.swift"; sourceTree = "<group>"; };
+		D73BD14D22D5C96200F9D054 /* HTTPURLResponse+Description.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HTTPURLResponse+Description.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -220,6 +224,8 @@
 			children = (
 				735694282291A4A9003131B4 /* ErrorResponse.swift */,
 				735694262291A493003131B4 /* NetworkingService.swift */,
+				D73BD14D22D5C96200F9D054 /* HTTPURLResponse+Description.swift */,
+				D73BD14B22D5C94E00F9D054 /* URLRequest+Description.swift */,
 				735694082291A452003131B4 /* MonnoNetwork.h */,
 				735694092291A452003131B4 /* Info.plist */,
 				735694322291A877003131B4 /* Bundle+JSONFileReader.swift */,
@@ -474,7 +480,9 @@
 			files = (
 				735694272291A493003131B4 /* NetworkingService.swift in Sources */,
 				735694332291A877003131B4 /* Bundle+JSONFileReader.swift in Sources */,
+				D73BD14C22D5C94E00F9D054 /* URLRequest+Description.swift in Sources */,
 				735694292291A4A9003131B4 /* ErrorResponse.swift in Sources */,
+				D73BD14E22D5C96200F9D054 /* HTTPURLResponse+Description.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
