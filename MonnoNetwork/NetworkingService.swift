@@ -18,7 +18,7 @@ public enum NetworkingError: Error {
 	case badResponse
 	case badEncoding
 	case serializationError(SerializationError)
-	case serverError
+	case serverError(Data)
 	case unknown(Data)
 }
 
@@ -75,8 +75,13 @@ public extension Networking {
 					return
 				}
 				
+				guard let data = data else {
+					completion(.failure(NetworkingError.serializationError(.nilData)))
+					return
+				}
+				
 				guard let response = taskResponse as? HTTPURLResponse, (200...299).contains(response.statusCode) else {
-					completion(.failure(NetworkingError.serverError))
+					completion(.failure(NetworkingError.serverError(data)))
 					return
 				}
 				
@@ -89,10 +94,6 @@ public extension Networking {
 				//		return
 				//	}
 				
-				guard let data = data else {
-					completion(.failure(NetworkingError.serializationError(.nilData)))
-					return
-				}
 				
 				do {
 					let object = try JSONDecoder().decode(T.self, from: data)
@@ -104,6 +105,7 @@ public extension Networking {
 			}
 		}
 		task?.resume()
+		
 	}
 	
 	
