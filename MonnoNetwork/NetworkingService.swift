@@ -18,7 +18,7 @@ public enum NetworkingError: Error {
 	case badResponse
 	case badEncoding
 	case serializationError(SerializationError)
-	case serverError(Data)
+	case serverError(Data, HTTPURLResponse?)
 	case unknown(Data)
 }
 
@@ -35,6 +35,7 @@ public enum SerializationError: Error {
 public enum HTTPMethod {
 	case get
 	case post
+    case patch
 }
 
 
@@ -81,7 +82,11 @@ public extension Networking {
 				}
 				
 				guard let response = taskResponse as? HTTPURLResponse, (200...299).contains(response.statusCode) else {
-					completion(.failure(NetworkingError.serverError(data)))
+                    guard let urlResponse = taskResponse as? HTTPURLResponse else {
+                        completion(.failure(NetworkingError.serverError(data, nil)))
+                        return
+                    }
+                    completion(.failure(NetworkingError.serverError(data, urlResponse)))
 					return
 				}
 				
@@ -135,8 +140,9 @@ public extension Networking {
 				queryItems.append(queryItem)
 			}
 		}
-		components.queryItems = queryItems
-		
+        if !queryItems.isEmpty {
+            components.queryItems = queryItems
+        }
 		guard let urlQuery = components.url else {
 			completion(.failure(NetworkingError.badUrl))
 			return
@@ -199,6 +205,8 @@ public extension Networking {
 			request(method: "POST", path: path, headers: headers, bodyParams: params, completion: completion)
 		case .get:
 			request(method: "GET", path: path, headers: headers, urlParams: params, completion: completion)
+        case .patch:
+            request(method: "PATCH", path: path, headers: headers, bodyParams: params, completion: completion)
 		}
 	}
 }
