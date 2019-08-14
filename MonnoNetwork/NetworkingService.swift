@@ -172,19 +172,25 @@ public extension Networking {
 			completion(.failure(NetworkingError.badUrl))
 			return
 		}
-		var request = URLRequest(url: url)
-		if let body = bodyParams {
-			do {
-				let jsonData = try JSONSerialization.data(withJSONObject: body, options: [])
-				request.httpBody = jsonData
-			} catch {
-				completion(.failure(NetworkingError.badEncoding))
-			}
-		}
-		request.httpMethod = method
-		if let head = headers {
-			for (key, value) in head {
-				request.addValue(value, forHTTPHeaderField: key)
+        var request = URLRequest(url: url)
+        
+        if let body = bodyParams {
+            if let head = headers, head.values.contains("application/x-www-form-urlencoded") {
+                request.httpBody = body.percentEscaped().data(using: .utf8)
+            } else {
+                
+                do {
+                    let jsonData = try JSONSerialization.data(withJSONObject: body, options: [])
+                    request.httpBody = jsonData
+                } catch {
+                    completion(.failure(NetworkingError.badEncoding))
+                }
+            }
+        }
+        request.httpMethod = method
+        if let head = headers {
+            for (key, value) in head {
+                request.addValue(value, forHTTPHeaderField: key)
 			}
 		}
 		handleResponse(for: request, completion: completion)

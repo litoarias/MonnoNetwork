@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0AB5DD5D230425F800B0AF8F /* URLEncoded+Scaped.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB5DD5C230425F800B0AF8F /* URLEncoded+Scaped.swift */; };
 		735693D42291A436003131B4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 735693D32291A436003131B4 /* AppDelegate.swift */; };
 		735693D62291A436003131B4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 735693D52291A436003131B4 /* ViewController.swift */; };
 		735693D92291A436003131B4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 735693D72291A436003131B4 /* Main.storyboard */; };
@@ -85,6 +86,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0AB5DD5C230425F800B0AF8F /* URLEncoded+Scaped.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLEncoded+Scaped.swift"; sourceTree = "<group>"; };
 		735693D02291A436003131B4 /* NetworkTestApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NetworkTestApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		735693D32291A436003131B4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		735693D52291A436003131B4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -226,6 +228,7 @@
 				735694262291A493003131B4 /* NetworkingService.swift */,
 				D73BD14D22D5C96200F9D054 /* HTTPURLResponse+Description.swift */,
 				D73BD14B22D5C94E00F9D054 /* URLRequest+Description.swift */,
+				0AB5DD5C230425F800B0AF8F /* URLEncoded+Scaped.swift */,
 				735694082291A452003131B4 /* MonnoNetwork.h */,
 				735694092291A452003131B4 /* Info.plist */,
 				735694322291A877003131B4 /* Bundle+JSONFileReader.swift */,
@@ -482,6 +485,7 @@
 				735694332291A877003131B4 /* Bundle+JSONFileReader.swift in Sources */,
 				D73BD14C22D5C94E00F9D054 /* URLRequest+Description.swift in Sources */,
 				735694292291A4A9003131B4 /* ErrorResponse.swift in Sources */,
+				0AB5DD5D230425F800B0AF8F /* URLEncoded+Scaped.swift in Sources */,
 				D73BD14E22D5C96200F9D054 /* HTTPURLResponse+Description.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
