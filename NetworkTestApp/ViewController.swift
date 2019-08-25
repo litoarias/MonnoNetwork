@@ -24,10 +24,9 @@ class ViewController: UIViewController {
         
         
 	}
-	
+
+    
 	func dataRequest() {
-		
-		
 		networkingService.call(path: "/posts", headers: nil, params: nil, httpMethod: .get) { (result :Result<(object: [Post]?, unwrapped: Data), Error>) in
 			
 			switch result {

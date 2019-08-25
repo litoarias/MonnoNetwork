@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Post: Decodable {
+struct Post: Codable {
     var userId: Int?
     var id: Int?
     var title: String?
