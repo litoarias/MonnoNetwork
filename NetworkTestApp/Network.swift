@@ -11,6 +11,12 @@ import Foundation
 
 public class NetworkingService: NSObject, Networking, URLSessionDelegate {
     
+    public var request: URLRequest? = nil {
+        didSet {
+            self.request?.addValue("", forHTTPHeaderField: "")
+        }
+    }
+    
     public var session: URLSession?
     
     public var baseUrl = ""
@@ -18,7 +24,7 @@ public class NetworkingService: NSObject, Networking, URLSessionDelegate {
     public init(baseUrl: String) {
         super.init()
         self.baseUrl = baseUrl
-        self.session = URLSession(configuration: URLSessionConfiguration.default, delegate: self, delegateQueue: OperationQueue.main)
+//        self.session = URLSession(configuration: URLSessionConfiguration.default, delegate: self, delegateQueue: OperationQueue.main)
     }
     
     public func urlSession(_ session: URLSession, didReceive challenge: URLAuthenticationChallenge, completionHandler: @escaping (URLSession.AuthChallengeDisposition, URLCredential?) -> Void) {

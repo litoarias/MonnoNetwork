@@ -41,7 +41,6 @@ class ViewController: UIViewController {
 				alert.addAction(act)
 				self.present(alert, animated: true)
 			case .failure(let error):
-				print(error)
 				var strError: String = ""
 				switch error as? NetworkingError {
 				case .unknown(let data)?:

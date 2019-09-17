@@ -20,6 +20,8 @@ public enum NetworkingError: Error {
 	case serializationError(SerializationError)
 	case serverError(Data, HTTPURLResponse?)
 	case unknown(Data)
+    case urlRequestIsNil
+    case urlSessionIsNil
 }
 
 public enum SerializationError: Error {
@@ -44,12 +46,13 @@ public typealias Headers = [String : String]
 public typealias Parameters = [String: Any]
 
 /// <#Description#>
-public protocol Networking {
+public protocol Networking: class {
+    var request: URLRequest? { get set }
 	var session: URLSession? { get set }
 	var baseUrl: String { get set }
 	func handleResponse<T: Decodable>(for request: URLRequest, completion: @escaping (Result<(object: T?, unwrapped: Data), Error>) -> Void)
-	func request<T: Decodable>(method: String, path: String, headers: Headers?, urlParams: Parameters?, completion: @escaping (Result<(object: T?, unwrapped: Data), Error>) -> Void)
-	func request<T: Decodable>(method: String, path: String, headers: Headers?, bodyParams: Parameters?, completion: @escaping (Result<(object: T?, unwrapped: Data), Error>) -> Void)
+    func request<T: Decodable>(method: String, path: String, headers: Headers?, urlParams: Parameters?, completion: @escaping (Result<(object: T?, unwrapped: Data), Error>) -> Void)
+    func request<T: Decodable>(method: String, path: String, headers: Headers?, bodyParams: Parameters?, completion: @escaping (Result<(object: T?, unwrapped: Data), Error>) -> Void)
 	func call<T: Decodable>(path: String, headers: Headers?, params: Parameters?, httpMethod: HTTPMethod, completion: @escaping (Result<(object: T?, unwrapped: Data), Error>) -> Void)
 }
 
@@ -63,7 +66,12 @@ public extension Networking {
 	///   - completion: <#completion description#>
 	func handleResponse<T: Decodable>(for request: URLRequest, completion: @escaping (Result<(object: T?, unwrapped: Data), Error>) -> Void) {
 		
-		let task = session?.dataTask(with: request) { (data, taskResponse, taskError) in
+        guard let urlsession = session else {
+            completion(.failure(NetworkingError.urlSessionIsNil))
+            return
+        }
+        
+		let task = urlsession.dataTask(with: request) { (data, taskResponse, taskError) in
 			DispatchQueue.main.async {
 				#if DEBUG
 				debugPrint("======================== BEGIN REQUEST ========================")
@@ -109,8 +117,7 @@ public extension Networking {
 				
 			}
 		}
-		task?.resume()
-		
+		task.resume()
 	}
 	
 	
@@ -122,7 +129,7 @@ public extension Networking {
 	///   - headers: <#headers description#>
 	///   - urlParams: <#urlParams description#>
 	///   - completion: <#completion description#>
-	func request<T: Decodable>(method: String, path: String, headers: Headers?, urlParams: Parameters?, completion: @escaping (Result<(object: T?, unwrapped: Data), Error>) -> Void) {
+    func request<T: Decodable>(method: String, path: String, headers: Headers?, urlParams: Parameters?, completion: @escaping (Result<(object: T?, unwrapped: Data), Error>) -> Void) {
 		guard let url = URL(string: baseUrl) else {
 			completion(.failure(NetworkingError.badUrl))
 			return
@@ -148,14 +155,20 @@ public extension Networking {
 			return
 		}
 		
-		var request = URLRequest(url: urlQuery)
-		request.httpMethod = method
+        request = URLRequest(url: urlQuery)
+        
+        guard var secureRequest = request else {
+            completion(.failure(NetworkingError.urlRequestIsNil))
+            return
+        }
+        
+        secureRequest.httpMethod = method
 		if let head = headers {
 			for (key, value) in head {
-				request.addValue(value, forHTTPHeaderField: key)
+				secureRequest.addValue(value, forHTTPHeaderField: key)
 			}
 		}
-		handleResponse(for: request, completion: completion)
+		handleResponse(for: secureRequest, completion: completion)
 	}
 	
 	
@@ -167,33 +180,38 @@ public extension Networking {
 	///   - headers: <#headers description#>
 	///   - bodyParams: <#bodyParams description#>
 	///   - completion: <#completion description#>
-	func request<T: Decodable>(method: String, path: String, headers: Headers?, bodyParams: Parameters?, completion: @escaping (Result<(object: T?, unwrapped: Data), Error>) -> Void) {
+    func request<T: Decodable>(method: String, path: String, headers: Headers?, bodyParams: Parameters?, completion: @escaping (Result<(object: T?, unwrapped: Data), Error>) -> Void) {
 		guard let url = URL(string: baseUrl + path) else {
 			completion(.failure(NetworkingError.badUrl))
 			return
 		}
-        var request = URLRequest(url: url)
+        request = URLRequest(url: url)
+        
+        guard var secureRequest = request else {
+            completion(.failure(NetworkingError.urlRequestIsNil))
+            return
+        }
         
         if let body = bodyParams {
             if let head = headers, head.values.contains("application/x-www-form-urlencoded") {
-                request.httpBody = body.percentEscaped().data(using: .utf8)
+                secureRequest.httpBody = body.percentEscaped().data(using: .utf8)
             } else {
                 
                 do {
                     let jsonData = try JSONSerialization.data(withJSONObject: body, options: [])
-                    request.httpBody = jsonData
+                    secureRequest.httpBody = jsonData
                 } catch {
                     completion(.failure(NetworkingError.badEncoding))
                 }
             }
         }
-        request.httpMethod = method
+        secureRequest.httpMethod = method
         if let head = headers {
             for (key, value) in head {
-                request.addValue(value, forHTTPHeaderField: key)
+                secureRequest.addValue(value, forHTTPHeaderField: key)
 			}
 		}
-		handleResponse(for: request, completion: completion)
+		handleResponse(for: secureRequest, completion: completion)
 	}
 	
 	
