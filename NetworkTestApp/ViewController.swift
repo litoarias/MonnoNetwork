@@ -15,19 +15,9 @@ class ViewController: UIViewController {
 	var networkingService: Networking {
 		return self.mocks ? NetworkingMockService() : NetworkingService(baseUrl: "https://jsonplaceholder.typicode.com")
 	}
-	
-	override func viewDidLoad() {
-		super.viewDidLoad()
-		// Do any additional setup after loading the view.
-        
-        
-        
-        
-	}
-
     
 	func dataRequest() {
-		networkingService.call(path: "/posts", headers: nil, params: nil, httpMethod: .get) { (result :Result<(object: [Post]?, unwrapped: Data), Error>) in
+		networkingService.call(path: "/posts", headers: nil, params: nil, httpMethod: .get, completion: { (result :Result<(object: [Post]?, unwrapped: Data), Error>) in
 			
 			switch result {
 			case .success(let tuple):
@@ -59,7 +49,7 @@ class ViewController: UIViewController {
 				alert.addAction(act)
 				self.present(alert, animated: true)
 			}
-		}
+		})
 	}
 	
 	@IBAction func testRequest(_ sender: UIButton) {
