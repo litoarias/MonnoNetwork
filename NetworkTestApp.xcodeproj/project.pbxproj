@@ -3,51 +3,23 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 52;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		0A756D722312A67A009EF8F0 /* Parameters+JSONObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A756D712312A67A009EF8F0 /* Parameters+JSONObject.swift */; };
 		0AB5DD5D230425F800B0AF8F /* URLEncoded+Scaped.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB5DD5C230425F800B0AF8F /* URLEncoded+Scaped.swift */; };
-		418C4FB224813C1A00AA891C /* MonnoNetwork in Frameworks */ = {isa = PBXBuildFile; productRef = 418C4FB124813C1A00AA891C /* MonnoNetwork */; };
-		735693D42291A436003131B4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 735693D32291A436003131B4 /* AppDelegate.swift */; };
-		735693D62291A436003131B4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 735693D52291A436003131B4 /* ViewController.swift */; };
-		735693D92291A436003131B4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 735693D72291A436003131B4 /* Main.storyboard */; };
-		735693DB2291A439003131B4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 735693DA2291A439003131B4 /* Assets.xcassets */; };
-		735693DE2291A439003131B4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 735693DC2291A439003131B4 /* LaunchScreen.storyboard */; };
-		735693E92291A439003131B4 /* NetworkTestAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 735693E82291A439003131B4 /* NetworkTestAppTests.swift */; };
-		735693F42291A439003131B4 /* NetworkTestAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 735693F32291A439003131B4 /* NetworkTestAppUITests.swift */; };
 		7356940F2291A452003131B4 /* MonnoNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 735694062291A452003131B4 /* MonnoNetwork.framework */; };
 		735694162291A452003131B4 /* MonnoNetworkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 735694152291A452003131B4 /* MonnoNetworkTests.swift */; };
 		735694182291A452003131B4 /* MonnoNetwork.h in Headers */ = {isa = PBXBuildFile; fileRef = 735694082291A452003131B4 /* MonnoNetwork.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		735694252291A46F003131B4 /* posts.json in Resources */ = {isa = PBXBuildFile; fileRef = 735694242291A46F003131B4 /* posts.json */; };
 		735694272291A493003131B4 /* NetworkingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 735694262291A493003131B4 /* NetworkingService.swift */; };
 		735694292291A4A9003131B4 /* ErrorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 735694282291A4A9003131B4 /* ErrorResponse.swift */; };
-		7356942B2291A4D2003131B4 /* NetworkMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7356942A2291A4D2003131B4 /* NetworkMock.swift */; };
-		7356942D2291A69A003131B4 /* Responses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7356942C2291A69A003131B4 /* Responses.swift */; };
-		7356942F2291A78C003131B4 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7356942E2291A78C003131B4 /* Post.swift */; };
-		735694312291A79A003131B4 /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 735694302291A79A003131B4 /* Comment.swift */; };
 		735694332291A877003131B4 /* Bundle+JSONFileReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 735694322291A877003131B4 /* Bundle+JSONFileReader.swift */; };
-		735694352291AB94003131B4 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 735694342291AB94003131B4 /* Network.swift */; };
 		D73BD14C22D5C94E00F9D054 /* URLRequest+Description.swift in Sources */ = {isa = PBXBuildFile; fileRef = D73BD14B22D5C94E00F9D054 /* URLRequest+Description.swift */; };
 		D73BD14E22D5C96200F9D054 /* HTTPURLResponse+Description.swift in Sources */ = {isa = PBXBuildFile; fileRef = D73BD14D22D5C96200F9D054 /* HTTPURLResponse+Description.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		735693E52291A439003131B4 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 735693C82291A436003131B4 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 735693CF2291A436003131B4;
-			remoteInfo = NetworkTestApp;
-		};
-		735693F02291A439003131B4 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 735693C82291A436003131B4 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 735693CF2291A436003131B4;
-			remoteInfo = NetworkTestApp;
-		};
 		735694102291A452003131B4 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 735693C82291A436003131B4 /* Project object */;
@@ -55,73 +27,25 @@
 			remoteGlobalIDString = 735694052291A452003131B4;
 			remoteInfo = MonnoNetwork;
 		};
-		735694122291A452003131B4 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 735693C82291A436003131B4 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 735693CF2291A436003131B4;
-			remoteInfo = NetworkTestApp;
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		0A756D712312A67A009EF8F0 /* Parameters+JSONObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Parameters+JSONObject.swift"; sourceTree = "<group>"; };
 		0AB5DD5C230425F800B0AF8F /* URLEncoded+Scaped.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLEncoded+Scaped.swift"; sourceTree = "<group>"; };
-		735693D02291A436003131B4 /* NetworkTestApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NetworkTestApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		735693D32291A436003131B4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		735693D52291A436003131B4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		735693D82291A436003131B4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		735693DA2291A439003131B4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		735693DD2291A439003131B4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		735693DF2291A439003131B4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		735693E42291A439003131B4 /* NetworkTestAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NetworkTestAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		735693E82291A439003131B4 /* NetworkTestAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkTestAppTests.swift; sourceTree = "<group>"; };
-		735693EA2291A439003131B4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		735693EF2291A439003131B4 /* NetworkTestAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NetworkTestAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		735693F32291A439003131B4 /* NetworkTestAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkTestAppUITests.swift; sourceTree = "<group>"; };
-		735693F52291A439003131B4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		735694062291A452003131B4 /* MonnoNetwork.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MonnoNetwork.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		735694082291A452003131B4 /* MonnoNetwork.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MonnoNetwork.h; sourceTree = "<group>"; };
 		735694092291A452003131B4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7356940E2291A452003131B4 /* MonnoNetworkTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MonnoNetworkTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		735694152291A452003131B4 /* MonnoNetworkTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonnoNetworkTests.swift; sourceTree = "<group>"; };
 		735694172291A452003131B4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		735694242291A46F003131B4 /* posts.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = posts.json; sourceTree = "<group>"; };
 		735694262291A493003131B4 /* NetworkingService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkingService.swift; sourceTree = "<group>"; };
 		735694282291A4A9003131B4 /* ErrorResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorResponse.swift; sourceTree = "<group>"; };
-		7356942A2291A4D2003131B4 /* NetworkMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkMock.swift; sourceTree = "<group>"; };
-		7356942C2291A69A003131B4 /* Responses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Responses.swift; sourceTree = "<group>"; };
-		7356942E2291A78C003131B4 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
-		735694302291A79A003131B4 /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
 		735694322291A877003131B4 /* Bundle+JSONFileReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+JSONFileReader.swift"; sourceTree = "<group>"; };
-		735694342291AB94003131B4 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		D73BD14B22D5C94E00F9D054 /* URLRequest+Description.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLRequest+Description.swift"; sourceTree = "<group>"; };
 		D73BD14D22D5C96200F9D054 /* HTTPURLResponse+Description.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HTTPURLResponse+Description.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		735693CD2291A436003131B4 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				418C4FB224813C1A00AA891C /* MonnoNetwork in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		735693E12291A439003131B4 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		735693EC2291A439003131B4 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		735694032291A452003131B4 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -143,9 +67,6 @@
 		735693C72291A436003131B4 = {
 			isa = PBXGroup;
 			children = (
-				735693D22291A436003131B4 /* NetworkTestApp */,
-				735693E72291A439003131B4 /* NetworkTestAppTests */,
-				735693F22291A439003131B4 /* NetworkTestAppUITests */,
 				735694072291A452003131B4 /* MonnoNetwork */,
 				735694142291A452003131B4 /* MonnoNetworkTests */,
 				735693D12291A436003131B4 /* Products */,
@@ -155,50 +76,10 @@
 		735693D12291A436003131B4 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				735693D02291A436003131B4 /* NetworkTestApp.app */,
-				735693E42291A439003131B4 /* NetworkTestAppTests.xctest */,
-				735693EF2291A439003131B4 /* NetworkTestAppUITests.xctest */,
 				735694062291A452003131B4 /* MonnoNetwork.framework */,
 				7356940E2291A452003131B4 /* MonnoNetworkTests.xctest */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		735693D22291A436003131B4 /* NetworkTestApp */ = {
-			isa = PBXGroup;
-			children = (
-				735693D32291A436003131B4 /* AppDelegate.swift */,
-				735693D52291A436003131B4 /* ViewController.swift */,
-				7356942A2291A4D2003131B4 /* NetworkMock.swift */,
-				735694342291AB94003131B4 /* Network.swift */,
-				7356942C2291A69A003131B4 /* Responses.swift */,
-				735694302291A79A003131B4 /* Comment.swift */,
-				7356942E2291A78C003131B4 /* Post.swift */,
-				735693D72291A436003131B4 /* Main.storyboard */,
-				735693DA2291A439003131B4 /* Assets.xcassets */,
-				735693DC2291A439003131B4 /* LaunchScreen.storyboard */,
-				735693DF2291A439003131B4 /* Info.plist */,
-				735694242291A46F003131B4 /* posts.json */,
-			);
-			path = NetworkTestApp;
-			sourceTree = "<group>";
-		};
-		735693E72291A439003131B4 /* NetworkTestAppTests */ = {
-			isa = PBXGroup;
-			children = (
-				735693E82291A439003131B4 /* NetworkTestAppTests.swift */,
-				735693EA2291A439003131B4 /* Info.plist */,
-			);
-			path = NetworkTestAppTests;
-			sourceTree = "<group>";
-		};
-		735693F22291A439003131B4 /* NetworkTestAppUITests */ = {
-			isa = PBXGroup;
-			children = (
-				735693F32291A439003131B4 /* NetworkTestAppUITests.swift */,
-				735693F52291A439003131B4 /* Info.plist */,
-			);
-			path = NetworkTestAppUITests;
 			sourceTree = "<group>";
 		};
 		735694072291A452003131B4 /* MonnoNetwork */ = {
@@ -240,62 +121,6 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		735693CF2291A436003131B4 /* NetworkTestApp */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 735693F82291A439003131B4 /* Build configuration list for PBXNativeTarget "NetworkTestApp" */;
-			buildPhases = (
-				735693CC2291A436003131B4 /* Sources */,
-				735693CD2291A436003131B4 /* Frameworks */,
-				735693CE2291A436003131B4 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = NetworkTestApp;
-			packageProductDependencies = (
-				418C4FB124813C1A00AA891C /* MonnoNetwork */,
-			);
-			productName = NetworkTestApp;
-			productReference = 735693D02291A436003131B4 /* NetworkTestApp.app */;
-			productType = "com.apple.product-type.application";
-		};
-		735693E32291A439003131B4 /* NetworkTestAppTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 735693FB2291A439003131B4 /* Build configuration list for PBXNativeTarget "NetworkTestAppTests" */;
-			buildPhases = (
-				735693E02291A439003131B4 /* Sources */,
-				735693E12291A439003131B4 /* Frameworks */,
-				735693E22291A439003131B4 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				735693E62291A439003131B4 /* PBXTargetDependency */,
-			);
-			name = NetworkTestAppTests;
-			productName = NetworkTestAppTests;
-			productReference = 735693E42291A439003131B4 /* NetworkTestAppTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		735693EE2291A439003131B4 /* NetworkTestAppUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 735693FE2291A439003131B4 /* Build configuration list for PBXNativeTarget "NetworkTestAppUITests" */;
-			buildPhases = (
-				735693EB2291A439003131B4 /* Sources */,
-				735693EC2291A439003131B4 /* Frameworks */,
-				735693ED2291A439003131B4 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				735693F12291A439003131B4 /* PBXTargetDependency */,
-			);
-			name = NetworkTestAppUITests;
-			productName = NetworkTestAppUITests;
-			productReference = 735693EF2291A439003131B4 /* NetworkTestAppUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 		735694052291A452003131B4 /* MonnoNetwork */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7356941D2291A452003131B4 /* Build configuration list for PBXNativeTarget "MonnoNetwork" */;
@@ -326,7 +151,6 @@
 			);
 			dependencies = (
 				735694112291A452003131B4 /* PBXTargetDependency */,
-				735694132291A452003131B4 /* PBXTargetDependency */,
 			);
 			name = MonnoNetworkTests;
 			productName = MonnoNetworkTests;
@@ -343,17 +167,6 @@
 				LastUpgradeCheck = 1020;
 				ORGANIZATIONNAME = MonnoApps;
 				TargetAttributes = {
-					735693CF2291A436003131B4 = {
-						CreatedOnToolsVersion = 10.2.1;
-					};
-					735693E32291A439003131B4 = {
-						CreatedOnToolsVersion = 10.2.1;
-						TestTargetID = 735693CF2291A436003131B4;
-					};
-					735693EE2291A439003131B4 = {
-						CreatedOnToolsVersion = 10.2.1;
-						TestTargetID = 735693CF2291A436003131B4;
-					};
 					735694052291A452003131B4 = {
 						CreatedOnToolsVersion = 10.2.1;
 						LastSwiftMigration = 1020;
@@ -374,15 +187,11 @@
 			);
 			mainGroup = 735693C72291A436003131B4;
 			packageReferences = (
-				418C4FB024813C1A00AA891C /* XCRemoteSwiftPackageReference "MonnoNetwork" */,
 			);
 			productRefGroup = 735693D12291A436003131B4 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				735693CF2291A436003131B4 /* NetworkTestApp */,
-				735693E32291A439003131B4 /* NetworkTestAppTests */,
-				735693EE2291A439003131B4 /* NetworkTestAppUITests */,
 				735694052291A452003131B4 /* MonnoNetwork */,
 				7356940D2291A452003131B4 /* MonnoNetworkTests */,
 			);
@@ -390,31 +199,6 @@
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		735693CE2291A436003131B4 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				735693DE2291A439003131B4 /* LaunchScreen.storyboard in Resources */,
-				735693DB2291A439003131B4 /* Assets.xcassets in Resources */,
-				735693D92291A436003131B4 /* Main.storyboard in Resources */,
-				735694252291A46F003131B4 /* posts.json in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		735693E22291A439003131B4 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		735693ED2291A439003131B4 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		735694042291A452003131B4 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -432,36 +216,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		735693CC2291A436003131B4 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				7356942D2291A69A003131B4 /* Responses.swift in Sources */,
-				735694312291A79A003131B4 /* Comment.swift in Sources */,
-				735693D62291A436003131B4 /* ViewController.swift in Sources */,
-				735693D42291A436003131B4 /* AppDelegate.swift in Sources */,
-				7356942B2291A4D2003131B4 /* NetworkMock.swift in Sources */,
-				735694352291AB94003131B4 /* Network.swift in Sources */,
-				7356942F2291A78C003131B4 /* Post.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		735693E02291A439003131B4 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				735693E92291A439003131B4 /* NetworkTestAppTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		735693EB2291A439003131B4 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				735693F42291A439003131B4 /* NetworkTestAppUITests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		735694022291A452003131B4 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -487,46 +241,12 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		735693E62291A439003131B4 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 735693CF2291A436003131B4 /* NetworkTestApp */;
-			targetProxy = 735693E52291A439003131B4 /* PBXContainerItemProxy */;
-		};
-		735693F12291A439003131B4 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 735693CF2291A436003131B4 /* NetworkTestApp */;
-			targetProxy = 735693F02291A439003131B4 /* PBXContainerItemProxy */;
-		};
 		735694112291A452003131B4 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 735694052291A452003131B4 /* MonnoNetwork */;
 			targetProxy = 735694102291A452003131B4 /* PBXContainerItemProxy */;
 		};
-		735694132291A452003131B4 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 735693CF2291A436003131B4 /* NetworkTestApp */;
-			targetProxy = 735694122291A452003131B4 /* PBXContainerItemProxy */;
-		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		735693D72291A436003131B4 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				735693D82291A436003131B4 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		735693DC2291A439003131B4 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				735693DD2291A439003131B4 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		735693F62291A439003131B4 /* Debug */ = {
@@ -645,126 +365,6 @@
 			};
 			name = Release;
 		};
-		735693F92291A439003131B4 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 4U72882THN;
-				INFOPLIST_FILE = NetworkTestApp/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.monnoapps.NetworkTestApp;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		735693FA2291A439003131B4 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 4U72882THN;
-				INFOPLIST_FILE = NetworkTestApp/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.monnoapps.NetworkTestApp;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
-		};
-		735693FC2291A439003131B4 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 4U72882THN;
-				INFOPLIST_FILE = NetworkTestAppTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.monnoapps.NetworkTestAppTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NetworkTestApp.app/NetworkTestApp";
-			};
-			name = Debug;
-		};
-		735693FD2291A439003131B4 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 4U72882THN;
-				INFOPLIST_FILE = NetworkTestAppTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.monnoapps.NetworkTestAppTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NetworkTestApp.app/NetworkTestApp";
-			};
-			name = Release;
-		};
-		735693FF2291A439003131B4 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 4U72882THN;
-				INFOPLIST_FILE = NetworkTestAppUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.monnoapps.NetworkTestAppUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = NetworkTestApp;
-			};
-			name = Debug;
-		};
-		735694002291A439003131B4 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 4U72882THN;
-				INFOPLIST_FILE = NetworkTestAppUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.monnoapps.NetworkTestAppUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = NetworkTestApp;
-			};
-			name = Release;
-		};
 		7356941E2291A452003131B4 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -829,7 +429,6 @@
 		735694222291A452003131B4 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4U72882THN;
 				INFOPLIST_FILE = MonnoNetworkTests/Info.plist;
@@ -849,7 +448,6 @@
 		735694232291A452003131B4 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4U72882THN;
 				INFOPLIST_FILE = MonnoNetworkTests/Info.plist;
@@ -878,33 +476,6 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		735693F82291A439003131B4 /* Build configuration list for PBXNativeTarget "NetworkTestApp" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				735693F92291A439003131B4 /* Debug */,
-				735693FA2291A439003131B4 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		735693FB2291A439003131B4 /* Build configuration list for PBXNativeTarget "NetworkTestAppTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				735693FC2291A439003131B4 /* Debug */,
-				735693FD2291A439003131B4 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		735693FE2291A439003131B4 /* Build configuration list for PBXNativeTarget "NetworkTestAppUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				735693FF2291A439003131B4 /* Debug */,
-				735694002291A439003131B4 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		7356941D2291A452003131B4 /* Build configuration list for PBXNativeTarget "MonnoNetwork" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -924,25 +495,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		418C4FB024813C1A00AA891C /* XCRemoteSwiftPackageReference "MonnoNetwork" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/litoarias/MonnoNetwork";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 0.3.0;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		418C4FB124813C1A00AA891C /* MonnoNetwork */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 418C4FB024813C1A00AA891C /* XCRemoteSwiftPackageReference "MonnoNetwork" */;
-			productName = MonnoNetwork;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 735693C82291A436003131B4 /* Project object */;
 }
