@@ -262,7 +262,7 @@ public extension Networking {
         handleResponse(for: secureRequest, completion: completion)
     }
     
-    /// <#Description#>
+    /// 
     ///
     /// - Parameters:
     ///   - method: <#method description#>
