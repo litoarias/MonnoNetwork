@@ -21,14 +21,6 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
-		418C4FBF2481416000AA891C /* ErrorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 418C4FBA2481416000AA891C /* ErrorResponse.swift */; };
-		418C4FC02481416000AA891C /* HTTPURLResponse+Description.swift in Sources */ = {isa = PBXBuildFile; fileRef = 418C4FBB2481416000AA891C /* HTTPURLResponse+Description.swift */; };
-		418C4FC12481416000AA891C /* URLRequest+Description.swift in Sources */ = {isa = PBXBuildFile; fileRef = 418C4FB82481416000AA891C /* URLRequest+Description.swift */; };
-		418C4FC22481416000AA891C /* Parameters+JSONObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 418C4FBD2481416000AA891C /* Parameters+JSONObject.swift */; };
-		418C4FC32481416000AA891C /* URLEncoded+Scaped.swift in Sources */ = {isa = PBXBuildFile; fileRef = 418C4FBC2481416000AA891C /* URLEncoded+Scaped.swift */; };
-		418C4FC42481416000AA891C /* Bundle+JSONFileReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 418C4FBE2481416000AA891C /* Bundle+JSONFileReader.swift */; };
-		418C4FC52481416000AA891C /* NetworkingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 418C4FB92481416000AA891C /* NetworkingService.swift */; };
-		OBJ_28 /* MonnoNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_9 /* MonnoNetwork.swift */; };
 		OBJ_35 /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_6 /* Package.swift */; };
 		OBJ_46 /* MonnoNetworkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_12 /* MonnoNetworkTests.swift */; };
 		OBJ_47 /* XCTestManifests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_13 /* XCTestManifests.swift */; };
@@ -53,15 +45,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		418C4FB82481416000AA891C /* URLRequest+Description.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLRequest+Description.swift"; sourceTree = "<group>"; };
-		418C4FB92481416000AA891C /* NetworkingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingService.swift; sourceTree = "<group>"; };
-		418C4FBA2481416000AA891C /* ErrorResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorResponse.swift; sourceTree = "<group>"; };
-		418C4FBB2481416000AA891C /* HTTPURLResponse+Description.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HTTPURLResponse+Description.swift"; sourceTree = "<group>"; };
-		418C4FBC2481416000AA891C /* URLEncoded+Scaped.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLEncoded+Scaped.swift"; sourceTree = "<group>"; };
-		418C4FBD2481416000AA891C /* Parameters+JSONObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Parameters+JSONObject.swift"; sourceTree = "<group>"; };
-		418C4FBE2481416000AA891C /* Bundle+JSONFileReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+JSONFileReader.swift"; sourceTree = "<group>"; };
 		"MonnoNetwork::MonnoNetwork::Product" /* MonnoNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MonnoNetwork.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		"MonnoNetwork::MonnoNetworkTests::Product" /* MonnoNetworkTests.xctest */ = {isa = PBXFileReference; lastKnownFileType = file; path = MonnoNetworkTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		"MonnoNetwork::MonnoNetworkTests::Product" /* MonnoNetworkTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; path = MonnoNetworkTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		OBJ_12 /* MonnoNetworkTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonnoNetworkTests.swift; sourceTree = "<group>"; };
 		OBJ_13 /* XCTestManifests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XCTestManifests.swift; sourceTree = "<group>"; };
 		OBJ_17 /* NetworkTestAppUITests */ = {isa = PBXFileReference; lastKnownFileType = folder; path = NetworkTestAppUITests; sourceTree = SOURCE_ROOT; };
@@ -71,7 +56,6 @@
 		OBJ_21 /* MonnoNetworkTests */ = {isa = PBXFileReference; lastKnownFileType = folder; path = MonnoNetworkTests; sourceTree = SOURCE_ROOT; };
 		OBJ_22 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		OBJ_6 /* Package.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
-		OBJ_9 /* MonnoNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonnoNetwork.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,7 +112,6 @@
 				OBJ_10 /* Tests */,
 				OBJ_14 /* Products */,
 				OBJ_17 /* NetworkTestAppUITests */,
-				OBJ_18 /* MonnoNetwork */,
 				OBJ_19 /* NetworkTestApp */,
 				OBJ_20 /* NetworkTestAppTests */,
 				OBJ_21 /* MonnoNetworkTests */,
@@ -140,25 +123,9 @@
 		OBJ_7 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				OBJ_8 /* MonnoNetwork */,
+				OBJ_18 /* MonnoNetwork */,
 			);
 			name = Sources;
-			sourceTree = SOURCE_ROOT;
-		};
-		OBJ_8 /* MonnoNetwork */ = {
-			isa = PBXGroup;
-			children = (
-				418C4FBE2481416000AA891C /* Bundle+JSONFileReader.swift */,
-				418C4FBA2481416000AA891C /* ErrorResponse.swift */,
-				418C4FBB2481416000AA891C /* HTTPURLResponse+Description.swift */,
-				418C4FB92481416000AA891C /* NetworkingService.swift */,
-				418C4FBD2481416000AA891C /* Parameters+JSONObject.swift */,
-				418C4FBC2481416000AA891C /* URLEncoded+Scaped.swift */,
-				418C4FB82481416000AA891C /* URLRequest+Description.swift */,
-				OBJ_9 /* MonnoNetwork.swift */,
-			);
-			name = MonnoNetwork;
-			path = Sources/MonnoNetwork;
 			sourceTree = SOURCE_ROOT;
 		};
 /* End PBXGroup section */
@@ -245,14 +212,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 0;
 			files = (
-				418C4FC02481416000AA891C /* HTTPURLResponse+Description.swift in Sources */,
-				OBJ_28 /* MonnoNetwork.swift in Sources */,
-				418C4FC12481416000AA891C /* URLRequest+Description.swift in Sources */,
-				418C4FC52481416000AA891C /* NetworkingService.swift in Sources */,
-				418C4FC42481416000AA891C /* Bundle+JSONFileReader.swift in Sources */,
-				418C4FC22481416000AA891C /* Parameters+JSONObject.swift in Sources */,
-				418C4FC32481416000AA891C /* URLEncoded+Scaped.swift in Sources */,
-				418C4FBF2481416000AA891C /* ErrorResponse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
