@@ -3,12 +3,13 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		0A756D722312A67A009EF8F0 /* Parameters+JSONObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A756D712312A67A009EF8F0 /* Parameters+JSONObject.swift */; };
 		0AB5DD5D230425F800B0AF8F /* URLEncoded+Scaped.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB5DD5C230425F800B0AF8F /* URLEncoded+Scaped.swift */; };
+		418C4FB224813C1A00AA891C /* MonnoNetwork in Frameworks */ = {isa = PBXBuildFile; productRef = 418C4FB124813C1A00AA891C /* MonnoNetwork */; };
 		735693D42291A436003131B4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 735693D32291A436003131B4 /* AppDelegate.swift */; };
 		735693D62291A436003131B4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 735693D52291A436003131B4 /* ViewController.swift */; };
 		735693D92291A436003131B4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 735693D72291A436003131B4 /* Main.storyboard */; };
@@ -19,8 +20,6 @@
 		7356940F2291A452003131B4 /* MonnoNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 735694062291A452003131B4 /* MonnoNetwork.framework */; };
 		735694162291A452003131B4 /* MonnoNetworkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 735694152291A452003131B4 /* MonnoNetworkTests.swift */; };
 		735694182291A452003131B4 /* MonnoNetwork.h in Headers */ = {isa = PBXBuildFile; fileRef = 735694082291A452003131B4 /* MonnoNetwork.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		7356941B2291A452003131B4 /* MonnoNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 735694062291A452003131B4 /* MonnoNetwork.framework */; };
-		7356941C2291A452003131B4 /* MonnoNetwork.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 735694062291A452003131B4 /* MonnoNetwork.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		735694252291A46F003131B4 /* posts.json in Resources */ = {isa = PBXBuildFile; fileRef = 735694242291A46F003131B4 /* posts.json */; };
 		735694272291A493003131B4 /* NetworkingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 735694262291A493003131B4 /* NetworkingService.swift */; };
 		735694292291A4A9003131B4 /* ErrorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 735694282291A4A9003131B4 /* ErrorResponse.swift */; };
@@ -63,28 +62,7 @@
 			remoteGlobalIDString = 735693CF2291A436003131B4;
 			remoteInfo = NetworkTestApp;
 		};
-		735694192291A452003131B4 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 735693C82291A436003131B4 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 735694052291A452003131B4;
-			remoteInfo = MonnoNetwork;
-		};
 /* End PBXContainerItemProxy section */
-
-/* Begin PBXCopyFilesBuildPhase section */
-		735694202291A452003131B4 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				7356941C2291A452003131B4 /* MonnoNetwork.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		0A756D712312A67A009EF8F0 /* Parameters+JSONObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Parameters+JSONObject.swift"; sourceTree = "<group>"; };
@@ -126,7 +104,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7356941B2291A452003131B4 /* MonnoNetwork.framework in Frameworks */,
+				418C4FB224813C1A00AA891C /* MonnoNetwork in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -269,14 +247,15 @@
 				735693CC2291A436003131B4 /* Sources */,
 				735693CD2291A436003131B4 /* Frameworks */,
 				735693CE2291A436003131B4 /* Resources */,
-				735694202291A452003131B4 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				7356941A2291A452003131B4 /* PBXTargetDependency */,
 			);
 			name = NetworkTestApp;
+			packageProductDependencies = (
+				418C4FB124813C1A00AA891C /* MonnoNetwork */,
+			);
 			productName = NetworkTestApp;
 			productReference = 735693D02291A436003131B4 /* NetworkTestApp.app */;
 			productType = "com.apple.product-type.application";
@@ -394,6 +373,9 @@
 				Base,
 			);
 			mainGroup = 735693C72291A436003131B4;
+			packageReferences = (
+				418C4FB024813C1A00AA891C /* XCRemoteSwiftPackageReference "MonnoNetwork" */,
+			);
 			productRefGroup = 735693D12291A436003131B4 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -524,11 +506,6 @@
 			isa = PBXTargetDependency;
 			target = 735693CF2291A436003131B4 /* NetworkTestApp */;
 			targetProxy = 735694122291A452003131B4 /* PBXContainerItemProxy */;
-		};
-		7356941A2291A452003131B4 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 735694052291A452003131B4 /* MonnoNetwork */;
-			targetProxy = 735694192291A452003131B4 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -671,7 +648,6 @@
 		735693F92291A439003131B4 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4U72882THN;
@@ -691,7 +667,6 @@
 		735693FA2291A439003131B4 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4U72882THN;
@@ -949,6 +924,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		418C4FB024813C1A00AA891C /* XCRemoteSwiftPackageReference "MonnoNetwork" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/litoarias/MonnoNetwork";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.3.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		418C4FB124813C1A00AA891C /* MonnoNetwork */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 418C4FB024813C1A00AA891C /* XCRemoteSwiftPackageReference "MonnoNetwork" */;
+			productName = MonnoNetwork;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 735693C82291A436003131B4 /* Project object */;
 }
