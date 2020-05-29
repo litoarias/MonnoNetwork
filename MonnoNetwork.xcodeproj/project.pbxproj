@@ -21,6 +21,14 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
+		41022DA9248144F800557A77 /* Bundle+JSONFileReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41022DA0248144F800557A77 /* Bundle+JSONFileReader.swift */; };
+		41022DAA248144F900557A77 /* MonnoNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41022DA1248144F800557A77 /* MonnoNetwork.swift */; };
+		41022DAB248144F900557A77 /* URLRequest+Description.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41022DA2248144F800557A77 /* URLRequest+Description.swift */; };
+		41022DAC248144F900557A77 /* ErrorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41022DA3248144F800557A77 /* ErrorResponse.swift */; };
+		41022DAD248144F900557A77 /* Parameters+JSONObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41022DA4248144F800557A77 /* Parameters+JSONObject.swift */; };
+		41022DAE248144F900557A77 /* URLEncoded+Scaped.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41022DA5248144F800557A77 /* URLEncoded+Scaped.swift */; };
+		41022DAF248144F900557A77 /* NetworkingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41022DA6248144F800557A77 /* NetworkingService.swift */; };
+		41022DB0248144F900557A77 /* HTTPURLResponse+Description.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41022DA8248144F800557A77 /* HTTPURLResponse+Description.swift */; };
 		OBJ_35 /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_6 /* Package.swift */; };
 		OBJ_46 /* MonnoNetworkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_12 /* MonnoNetworkTests.swift */; };
 		OBJ_47 /* XCTestManifests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_13 /* XCTestManifests.swift */; };
@@ -45,6 +53,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		41022D9F248144F800557A77 /* MonnoNetwork.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MonnoNetwork.h; sourceTree = "<group>"; };
+		41022DA0248144F800557A77 /* Bundle+JSONFileReader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Bundle+JSONFileReader.swift"; sourceTree = "<group>"; };
+		41022DA1248144F800557A77 /* MonnoNetwork.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonnoNetwork.swift; sourceTree = "<group>"; };
+		41022DA2248144F800557A77 /* URLRequest+Description.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "URLRequest+Description.swift"; sourceTree = "<group>"; };
+		41022DA3248144F800557A77 /* ErrorResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorResponse.swift; sourceTree = "<group>"; };
+		41022DA4248144F800557A77 /* Parameters+JSONObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Parameters+JSONObject.swift"; sourceTree = "<group>"; };
+		41022DA5248144F800557A77 /* URLEncoded+Scaped.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "URLEncoded+Scaped.swift"; sourceTree = "<group>"; };
+		41022DA6248144F800557A77 /* NetworkingService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkingService.swift; sourceTree = "<group>"; };
+		41022DA7248144F800557A77 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		41022DA8248144F800557A77 /* HTTPURLResponse+Description.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "HTTPURLResponse+Description.swift"; sourceTree = "<group>"; };
 		"MonnoNetwork::MonnoNetwork::Product" /* MonnoNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MonnoNetwork.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		"MonnoNetwork::MonnoNetworkTests::Product" /* MonnoNetworkTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; path = MonnoNetworkTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		OBJ_12 /* MonnoNetworkTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonnoNetworkTests.swift; sourceTree = "<group>"; };
@@ -104,7 +122,7 @@
 			name = Products;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		OBJ_5 /*  */ = {
+		OBJ_5 = {
 			isa = PBXGroup;
 			children = (
 				OBJ_6 /* Package.swift */,
@@ -117,12 +135,21 @@
 				OBJ_21 /* MonnoNetworkTests */,
 				OBJ_22 /* README.md */,
 			);
-			name = "";
 			sourceTree = "<group>";
 		};
 		OBJ_7 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				41022DA0248144F800557A77 /* Bundle+JSONFileReader.swift */,
+				41022DA3248144F800557A77 /* ErrorResponse.swift */,
+				41022DA8248144F800557A77 /* HTTPURLResponse+Description.swift */,
+				41022DA7248144F800557A77 /* Info.plist */,
+				41022D9F248144F800557A77 /* MonnoNetwork.h */,
+				41022DA1248144F800557A77 /* MonnoNetwork.swift */,
+				41022DA6248144F800557A77 /* NetworkingService.swift */,
+				41022DA4248144F800557A77 /* Parameters+JSONObject.swift */,
+				41022DA5248144F800557A77 /* URLEncoded+Scaped.swift */,
+				41022DA2248144F800557A77 /* URLRequest+Description.swift */,
 				OBJ_18 /* MonnoNetwork */,
 			);
 			name = Sources;
@@ -194,7 +221,7 @@
 			knownRegions = (
 				en,
 			);
-			mainGroup = OBJ_5 /*  */;
+			mainGroup = OBJ_5;
 			productRefGroup = OBJ_14 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -212,6 +239,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 0;
 			files = (
+				41022DAB248144F900557A77 /* URLRequest+Description.swift in Sources */,
+				41022DAA248144F900557A77 /* MonnoNetwork.swift in Sources */,
+				41022DA9248144F800557A77 /* Bundle+JSONFileReader.swift in Sources */,
+				41022DAD248144F900557A77 /* Parameters+JSONObject.swift in Sources */,
+				41022DAE248144F900557A77 /* URLEncoded+Scaped.swift in Sources */,
+				41022DAF248144F900557A77 /* NetworkingService.swift in Sources */,
+				41022DAC248144F900557A77 /* ErrorResponse.swift in Sources */,
+				41022DB0248144F900557A77 /* HTTPURLResponse+Description.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -388,6 +423,7 @@
 		OBJ_43 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_ENABLE_MODULES = YES;
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -413,6 +449,7 @@
 		OBJ_44 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_ENABLE_MODULES = YES;
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				FRAMEWORK_SEARCH_PATHS = (
