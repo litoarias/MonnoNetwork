@@ -8,7 +8,7 @@
 
 import Foundation
 
-/// <#Description#>
+/// 
 ///
 /// - badUrl: <#badUrl description#>
 /// - badResponse: <#badResponse description#>
